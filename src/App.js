@@ -5,11 +5,14 @@ import ContactList from './components/ContactList';
 import {getContacts, saveContact, udpatePhoto} from './api/ContactService';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
+import LayoutHome from './components/LayoutHome';
 import PoojaKart from './components/PoojaKart';
 import ContactDetail from './components/ContactDetail';
+import HomePage from "./components/HomePage";
+
 
 //version 2
-// version 3
+// version 3 
 
 function App() {
   const modalRef = useRef();
@@ -109,11 +112,14 @@ function App() {
 
   return (
     <>
+      {/* <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} /> */}
       <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} />
       <main className='main'>
         <div className='container'>
           <Routes >
             <Route path='/' element={<Navigate to={'/contacts'} />}/>
+            <Route path="/home" element={<LayoutHome><HomePage/></LayoutHome>}/>
+            {/* <Route path="/contacts" element={<Header toggleModal={toggleModal} nbOfContacts={data.totalElements}><Layout><div><ContactList data={data} currentPage={currentPage} getAllContacts={getAllContacts} /></div></Layout></Header>}/> */}
             <Route path="/contacts" element={<Layout><div><ContactList data={data} currentPage={currentPage} getAllContacts={getAllContacts} /></div></Layout>}/>
             <Route path="/contacts/:id" element={<Layout><div><ContactDetail updateContact={updateContact} updateImage={updateImage} /></div></Layout>}/>
             
