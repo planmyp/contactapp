@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
+
 // const HomeCard =() => {
 //   return (
 //     <Card style={{ width: '18rem' }}>
@@ -27,7 +28,15 @@ const HomeCard = ({ image, title, text, buttonText }) => {
         <Card.Text style={{ minHeight: '3em', // Ensures at least 2 lines of text space
             lineHeight: '1.5em', // Adjust line height for better spacing
             overflow: 'hidden'}}>{text}</Card.Text>
-      <Card.Img variant="top" src={image} />
+      <Card.Img variant="top" src={image} 
+      style={{ 
+        // height: '300px',
+        // width: '300px', 
+        height: '100px',
+        width: '100px', 
+        objectFit: 'cover'
+      }} 
+      />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Button variant="primary">{buttonText}</Button>
