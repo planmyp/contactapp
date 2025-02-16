@@ -617,3 +617,14 @@ input[type=file]::file-selector-button:hover {
 	  flex-direction: column;
 	} */
 }
+
+
+/*Author: Ambuj 
+Date:12.02.2025*/
+.card-container {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+	/* justify-content: center; */
+	justify-content: space-between;
+  }
