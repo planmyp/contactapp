@@ -24,23 +24,22 @@ import Card from 'react-bootstrap/Card';
 
 const HomeCard = ({ image, title, text, buttonText }) => {
   return (
-    <Card style={{ width: '18rem' }}>
-        <Card.Text style={{ minHeight: '3em', // Ensures at least 2 lines of text space
+    <Card style={{ width: '7em' }}>
+        <Card.Text style={{ minHeight: '2em', // Ensures at least 2 lines of text space
             lineHeight: '1.5em', // Adjust line height for better spacing
-            overflow: 'hidden'}}>{text}</Card.Text>
+            overflow: 'hidden',
+            textAlign:'center'}}>{text}</Card.Text>
       <Card.Img variant="top" src={image} 
       style={{ 
         // height: '300px',
         // width: '300px', 
-        height: '100px',
-        width: '100px', 
+        height: '120px',
+        width: '120px', 
         objectFit: 'cover'
       }} 
       />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Button variant="primary">{buttonText}</Button>
-      </Card.Body>
+        <Button style={{ backgroundColor: 'rgb(241, 196, 15)', color: 'white' }}>{buttonText}</Button>
+
     </Card>
   );
 };

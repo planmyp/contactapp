@@ -60,7 +60,9 @@ const HomePage = () => {
       {/* <div className="card-container"> */}
 
       <Container>
-        <Row>
+
+        {/* <Row> */}
+          {/* Map function iterates over card array 
           {cards.map((card, index) => (
             <Col key={index} xs={12} sm={6} md={4} lg={3}>
               <HomeCard 
@@ -70,8 +72,73 @@ const HomePage = () => {
                 buttonText={card.buttonText}
               />
             </Col>
-          ))}
-        </Row>
+
+          ))}  */}
+        {/* </Row> */}
+        <br/>
+        <br/>
+        {/*Start of Alpha, Beta and Gamma */}
+        <Row className="gy-4">
+  {/* Alpha Column */}
+  <Col xs={12} md={4}>
+    <div className="p-3 border rounded-2 bg-light">
+    <h5 className="text-center mb-4">Book top rated Pandit in your area</h5>
+      <Row className="gy-1">
+        {cards.map((card, index) => (
+          <Col key={`alpha-${index}`} xs={12} sm={6} md={4}>
+            <HomeCard 
+              image={card.image}
+              title={card.title}
+              text={card.text}
+              buttonText={card.buttonText}
+            />
+          </Col>
+        ))}
+      </Row>
+    </div>
+  </Col>
+
+  {/* Beta Column */}
+  <Col xs={12} md={4}>
+    <div className="p-3 border rounded-2 bg-light">
+    <h5 className="text-center mb-4">Browse Pooja by category</h5>
+      <Row className="gy-1">
+        {cards.map((card, index) => (
+          <Col key={`beta-${index}`} xs={12} sm={6} md={4}>
+            <HomeCard 
+              image={card.image}
+              title={card.title}
+              text={card.text}
+              buttonText={card.buttonText}
+            />
+          </Col>
+        ))}
+      </Row>
+    </div>
+  </Col>
+
+  {/* Gamma Column */}
+  <Col xs={12} md={4}>
+    <div className="p-3 border rounded-2 bg-light">
+    <h5 className="text-center mb-4">Browse Pooja Kits</h5>
+      <Row className="gy-1">
+        {cards.map((card, index) => (
+          <Col key={`gamma-${index}`} xs={12} sm={6} md={4}>
+            <HomeCard 
+              image={card.image}
+              title={card.title}
+              text={card.text}
+              buttonText={card.buttonText}
+            />
+          </Col>
+        ))}
+      </Row>
+    </div>
+  </Col>
+</Row>
+
+
+        {/*End of Alpha, Beta and Gamma*/}
       </Container>
       {/* <HomeCard 
         image="/photos/ganeshPooja.png"
