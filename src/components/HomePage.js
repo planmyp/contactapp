@@ -8,6 +8,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import React, { useEffect, useState } from 'react';
 import HomePoojaTypeService from '../api/HomePoojaTypeService';
+import HomePanditService from '../api/HomePanditService';
+import HomePoojaKitService from '../api/HomePoojaKitService';
 // import HomeCard from '../components/HomeCard';
 // import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
@@ -33,18 +35,36 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = () => {
 
-  const [cards, setCards] = useState([]);
+  const [poojaCards, setPoojaCards] = useState([]);
+  const [panditCards, setPanditCards] = useState([]);
+  // const [cards, setCards] = useState([]);
+  const [poojaKits, setPoojaKits] = useState([]);
 
-  // Fetch data when the component mounts
-    useEffect(() => {
-      HomePoojaTypeService.getAllHomePoojaTypes()
-        .then(data => {
-          setCards(data);
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
+  useEffect(() => {
+    // Fetch Pooja Types
+    HomePoojaTypeService.getAllHomePoojaTypes()
+      .then(data => {
+        setPoojaCards(data);
+      })
+      .catch(error => {
+        console.error('Error fetching Pooja Types:', error);
+      });
+
+    // Fetch Pandits
+    HomePanditService.getAllPandits()
+      .then(data => {
+        setPanditCards(data);
+      })
+      .catch(error => {
+        console.error('Error fetching Pandits:', error);
+      });
+
+
+      HomePoojaKitService.getAllHomePoojaKits()   // Fetching Pooja Kits
+      .then(data => setPoojaKits(data))
+      .catch(error => console.error('Error fetching Pooja Kits:', error));
     }, []);
+
 
 
   return (
@@ -54,8 +74,8 @@ const HomePage = () => {
       <h2>Your Complete Pooja Solution</h2>
       <p>"Whether you prefer online pooja or visiting us in person, we are your one-stop destination for all pooja needs. From pandits to ritual essentials, find everything you need for a perfect pooja, anytime, anywhere. Experience convenience and devotion, seamlessly blended!" 🙏✨</p>
       {/* Other homepage content */}
-      <br/>
-      <br/>
+      {/* <br/>
+      <br/> */}
      
       {/* <div className="card-container"> */}
 
@@ -75,8 +95,8 @@ const HomePage = () => {
 
           ))}  */}
         {/* </Row> */}
-        <br/>
-        <br/>
+        {/* <br/>
+        <br/> */}
         {/*Start of Alpha, Beta and Gamma */}
         <Row className="gy-4">
   {/* Alpha Column */}
@@ -84,7 +104,7 @@ const HomePage = () => {
     <div className="p-3 border rounded-2 bg-light">
     <h5 className="text-center mb-4">Book top rated Pandit in your area</h5>
       <Row className="gy-1">
-        {cards.map((card, index) => (
+        {panditCards.map((card, index) => (
           <Col key={`alpha-${index}`} xs={12} sm={6} md={4}>
             <HomeCard 
               image={card.image}
@@ -103,7 +123,7 @@ const HomePage = () => {
     <div className="p-3 border rounded-2 bg-light">
     <h5 className="text-center mb-4">Browse Pooja by category</h5>
       <Row className="gy-1">
-        {cards.map((card, index) => (
+        {poojaCards.map((card, index) => (
           <Col key={`beta-${index}`} xs={12} sm={6} md={4}>
             <HomeCard 
               image={card.image}
@@ -122,7 +142,7 @@ const HomePage = () => {
     <div className="p-3 border rounded-2 bg-light">
     <h5 className="text-center mb-4">Browse Pooja Kits</h5>
       <Row className="gy-1">
-        {cards.map((card, index) => (
+        {poojaKits.map((card, index) => (
           <Col key={`gamma-${index}`} xs={12} sm={6} md={4}>
             <HomeCard 
               image={card.image}

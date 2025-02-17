@@ -25,7 +25,7 @@ import Card from 'react-bootstrap/Card';
 const HomeCard = ({ image, title, text, buttonText }) => {
   return (
     <Card style={{ width: '7em' }}>
-        <Card.Text style={{ minHeight: '2em', // Ensures at least 2 lines of text space
+        <Card.Text style={{ minHeight: '3em', // Ensures at least 2 lines of text space
             lineHeight: '1.5em', // Adjust line height for better spacing
             overflow: 'hidden',
             textAlign:'center'}}>{text}</Card.Text>

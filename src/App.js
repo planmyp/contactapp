@@ -113,7 +113,8 @@ function App() {
   return (
     <>
       {/* <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} /> */}
-      <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} />
+      {/* <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} /> */}
+      <Header />
       <main className='main'>
         <div className='container'>
           <Routes >
