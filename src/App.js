@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
-import Header from './components/Header'
+import Header from './features/header/Header'
 import ContactList from './components/ContactList';
 import {getContacts, saveContact, udpatePhoto} from './api/ContactService';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -8,7 +8,8 @@ import Layout from './components/Layout';
 import LayoutHome from './components/LayoutHome';
 import PoojaKart from './components/PoojaKart';
 import ContactDetail from './components/ContactDetail';
-import HomePage from "./components/HomePage";
+// import HomePage from "./components/HomePage";
+import HomePage from "./features/home/HomePage";
 
 
 //version 2
@@ -112,7 +113,7 @@ function App() {
 
   return (
     <>
-      {/* <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} /> */}
+      <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} />
       {/* <Header toggleModal={toggleModal} nbOfContacts={data.totalElements} /> */}
       <Header />
       <main className='main'>

@@ -7,7 +7,7 @@ const Header = ({toggleModal, nbOfContacts}) => {
         <div className='container'>
             <h3>Contact List ({nbOfContacts})</h3>
             <button onClick={() => toggleModal(true)} className='btn'>
-                <i className='bi bi-plus-square'></i>Add New Contact
+                <i className='bi bi-plus-square'>Add New Contact</i>
             </button>
         </div>
     </header>

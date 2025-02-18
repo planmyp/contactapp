@@ -3,13 +3,14 @@ Author: Ambuj
 Created on: 06 Feb 2025
 */
 import Banner from "./Banner";
+// import Banner from "../components/Banner";
 import HomeCard from "./HomeCard";
 import { Container, Row, Col } from 'react-bootstrap';  
 
 import React, { useEffect, useState } from 'react';
-import HomePoojaTypeService from '../api/HomePoojaTypeService';
-import HomePanditService from '../api/HomePanditService';
-import HomePoojaKitService from '../api/HomePoojaKitService';
+import HomePoojaTypeService from '../../api/HomePoojaTypeService';
+import HomePanditService from '../../api/HomePanditService';
+import HomePoojaKitService from '../../api/HomePoojaKitService';
 // import HomeCard from '../components/HomeCard';
 // import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
@@ -71,7 +72,7 @@ const HomePage = () => {
     <div>
       <Banner />
       <br />
-      <h2>Your Complete Pooja Solution</h2>
+      <h2>One stop shop for all your pooja needs</h2>
       <p>"Whether you prefer online pooja or visiting us in person, we are your one-stop destination for all pooja needs. From pandits to ritual essentials, find everything you need for a perfect pooja, anytime, anywhere. Experience convenience and devotion, seamlessly blended!" 🙏✨</p>
       {/* Other homepage content */}
       {/* <br/>
@@ -100,7 +101,7 @@ const HomePage = () => {
         {/*Start of Alpha, Beta and Gamma */}
         <Row className="gy-4">
   {/* Alpha Column */}
-  <Col xs={12} md={4}>
+  {/* <Col xs={12} md={4}>
     <div className="p-3 border rounded-2 bg-light">
     <h5 className="text-center mb-4">Book top rated Pandit in your area</h5>
       <Row className="gy-1">
@@ -116,7 +117,7 @@ const HomePage = () => {
         ))}
       </Row>
     </div>
-  </Col>
+  </Col> */}
 
   {/* Beta Column */}
   <Col xs={12} md={4}>

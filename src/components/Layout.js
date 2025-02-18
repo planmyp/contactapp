@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from './Sidebar'; // Sidebar component
-import HeaderCommon from './HeaderCommon';   // Header component
-import Footer from './Footer';   // Footer component
+import HeaderCommon from '../features/header/HeaderCommon';   // Header component
+import Footer from '../features/footer/Footer';   // Footer component
 
 const Layout = ({ children }) => {
   return (

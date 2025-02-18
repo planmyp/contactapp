@@ -5,9 +5,9 @@ Created on: 06 Feb 2025
 
 import React from 'react';
 import Sidebar from './Sidebar'; // Sidebar component
-import HeaderCommon from './HeaderCommon';   // Header component
-import FooterHome from './FooterHome';   // Footer component
-import HeaderHome from './HeaderHome';   // Footer component
+import HeaderCommon from '../features/header/HeaderCommon';   // Header component
+import FooterHome from '../features/footer/FooterHome';   // Footer component
+import HeaderHome from '../features/header/HeaderHome';   // Footer component
 
 const LayoutHome = ({ children }) => {
   return (
